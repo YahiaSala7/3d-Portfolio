@@ -10,6 +10,7 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
+import Testimonials from "./components/Testimonials";
 function App() {
   return (
     <>
@@ -22,7 +23,8 @@ function App() {
         <Experience />
         <Tech />
         <Works />
-        <Feedbacks />
+        <Testimonials />
+        {/* <Feedbacks /> */}
         <Box className="relative z-0">
           <Contact />
           <StarsCanvas />

@@ -1,11 +1,11 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import landingimg from "../assets/herobg.png";
 import { ComputersCanvas } from "./canvas";
 import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <Box
-      className="root"
+      maxWidth="false"
       sx={{
         backgroundImage: `url(${landingimg})`,
         backgroundSize: "cover",
@@ -13,20 +13,15 @@ const Hero = () => {
         backgroundRepeat: "no-repeat",
         height: "100vh",
         display: "flex",
-        // justifyContent: "center",
-
         position: "relative",
       }}>
-      <Stack
+      <Container
         direction="row"
         sx={{
           position: "absolute",
           top: "120px",
-          left: "20%",
-          right: 0,
-          margin: "0 auto",
+          width: "100%",
           display: "flex",
-          alignItems: "start",
           gap: "7px",
         }}>
         <Box
@@ -48,33 +43,33 @@ const Hero = () => {
             className="violet-gradient"
             sx={{
               width: "5px",
-              height: "250px",
+              height: { xs: "180px", sm: "250px" },
             }}></Box>
         </Box>
         <Stack>
           <Typography
             fontWeight="bold"
             sx={{
-              fontSize: { xs: "25px", lg: "50px", md: "50px", sm: "50px" },
+              fontSize: { xs: "25px", sm: "50px" },
             }}>
             Hi,I&#39;m <span style={{ color: "#915EFF" }}>Yahia</span>
           </Typography>
           <Typography
             sx={{
-              fontSize: { xs: "18px", lg: "25px", md: "25px", sm: "25px" },
+              fontSize: { xs: "18px", sm: "25px" },
             }}
             mb="10px">
             I frontend developer ,develop user <br />
             interfaces and web applications
           </Typography>
         </Stack>
-      </Stack>
+      </Container>
       {/* <ComputersCanvas /> */}
 
       <Box
         sx={{
           position: "absolute",
-          bottom: { xs: "10px", sm: "32px" },
+          bottom: { xs: "10px", sm: "20px" },
           width: "100%",
           display: "flex",
           justifyContent: "center",
