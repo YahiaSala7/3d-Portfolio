@@ -1,12 +1,11 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
-import { TextField } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import { TextareaAutosize } from "@material-ui/core";
 function TextArea(Props) {
-  const { lable, name, ...rest } = Props;
+  const { name, ...rest } = Props;
   return (
-    <div className="form-control ">
-      <label htmlFor={name}>{lable}</label>
+    <Box className="form-control ">
       <Field
         as={TextField}
         name={name}
@@ -16,20 +15,18 @@ function TextArea(Props) {
         sx={{
           width: "100%",
           "& label": { color: "white" },
-          "& input": {
-            color: "blue",
-
+          "& textArea": {
+            color: "white",
             borderRadius: "10px",
           },
           bgcolor: "rgb(29, 24, 54)",
-          mb: "30px",
+          m: "15px 0",
         }}
         label="Your Message"
         multiline
         rows={3}
       />
-      <ErrorMessage name={name} />
-    </div>
+    </Box>
   );
 }
 

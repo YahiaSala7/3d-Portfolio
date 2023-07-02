@@ -72,6 +72,7 @@ function Testimonials() {
           p: "65px!important",
           borderRadius: "10px",
           border: "1px solid black",
+          width: "90%",
         }}>
         <Stack sx={{ textAlign: { xs: "center", sm: "start" } }}>
           <motion.div variants={textVariant()}>
@@ -84,7 +85,7 @@ function Testimonials() {
             </Typography>
           </motion.div>
         </Stack>
-        <Stack mt="20px" gap="10px" direction={{ sm: "row", xs: "column" }}>
+        <Stack mt="20px" gap="10px" direction={{ md: "row", sm: "column" }}>
           {testimonials.map((testimonial, index) => (
             <Testimonial
               key={`${testimonial}-${index}`}

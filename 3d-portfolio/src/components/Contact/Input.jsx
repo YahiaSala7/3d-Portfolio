@@ -1,11 +1,10 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
-import { Box, TextField } from "@mui/material";
+import { Box, Stack, TextField, Typography } from "@mui/material";
 function Input(Props) {
-  const { label, name, ...rest } = Props;
+  const { name, ...rest } = Props;
   return (
-    <Box className="form-control ">
-      {/* <label htmlFor={name}>{label}</label> */}
+    <Stack className="form-control">
       <Field
         name={name}
         id={name}
@@ -13,23 +12,19 @@ function Input(Props) {
         as={TextField}
         required
         label={`Your ${name}`}
-        error={!name}
-        helperText={!name ? "Required" : ""}
         sx={{
-          mb: "30px",
+          m: "15px 0",
           width: "100%",
           color: "red",
           "& label": { color: "white" },
           "& input": {
-            color: "blue",
+            color: "white",
             bgcolor: "rgb(29, 24, 54)",
             borderRadius: "10px",
           },
-          "& .MuiInputBase-helperText": { color: "green" },
         }}
       />
-      {/* <ErrorMessage name={name} /> */}
-    </Box>
+    </Stack>
   );
 }
 

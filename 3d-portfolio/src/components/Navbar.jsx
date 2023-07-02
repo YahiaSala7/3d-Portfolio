@@ -23,7 +23,7 @@ function Navbar() {
 
   const popupState = usePopupState({ variant: "popover", popupId: "demoMenu" });
   return (
-    <AppBar position="static" sx={{ backgroundColor: "black" }}>
+    <AppBar position="static" sx={{ bgcolor: "rgb(29, 24, 54)" }}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <NavLink
           to="/"

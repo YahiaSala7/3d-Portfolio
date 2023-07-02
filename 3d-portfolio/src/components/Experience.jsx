@@ -35,18 +35,14 @@ const ExperienceCard = (Props) => {
         <Typography color="white" fontSize="24px" fontWeight="bold">
           {title}
         </Typography>
-        <Typography
-          style={{ margin: 0 }}
-          m={0}
-          color="#f9fafbe6"
-          fontWeight="semibold">
+        <Typography m={0} color="#f9fafbe6" fontWeight="semibold">
           {company_name}
         </Typography>
       </Box>
-      <Box sx={{}}>
+      <Box>
         <List>
           {points.map((point, index) => (
-            <ListItem disablePadding key={`experience-point-${index}`}>
+            <ListItem disablePadding key={`experience-${point}-${index}`}>
               <FiberManualRecordIcon fontSize="25px" />
               <ListItemText
                 style={{ color: "wihte", fontSize: "14px", padding: "5px" }}>
@@ -76,7 +72,7 @@ function Experience() {
             </Typography>
           </motion.div>
         </Stack>
-        <Stack mt="20px">
+        <Stack mt="20px" width={{ lg: "100%", sm: "95%", xs: "100%" }}>
           <VerticalTimeline>
             {experiences.map((experience, index) => (
               <ExperienceCard

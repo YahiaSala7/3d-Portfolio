@@ -16,7 +16,7 @@ import { SectionWrapper } from "./hoc/index";
 import Tilt from "react-parallax-tilt";
 
 const Project = (Props) => {
-  const { project } = Props;
+  const { project, index } = Props;
   return (
     <Tilt>
       <Card
@@ -32,6 +32,7 @@ const Project = (Props) => {
           image={project.image}
           alt={project.name}
           sx={{ borderRadius: "50px", p: "5px", margin: "auto" }}
+          height={index === 2 ? "200px" : ""}
         />
         <CardContent>
           <Typography
@@ -101,7 +102,11 @@ const Works = () => {
           direction={{ sm: "row", xs: "column" }}
           alignItems="center">
           {projects.map((project, index) => (
-            <Project project={project} index={index} key={project.title} />
+            <Project
+              project={project}
+              index={index}
+              key={`${index}-${project.title}`}
+            />
           ))}
         </Stack>
       </Container>
